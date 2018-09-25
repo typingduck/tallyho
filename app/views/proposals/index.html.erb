@@ -1,0 +1,22 @@
+<%= link_to 'Home', '/' %>
+
+<h1>Listing proposals</h1>
+
+<%= link_to 'New proposal', new_proposal_path %>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Link</th>
+    <th></th>
+  </tr>
+
+  <% @proposals.each do |proposal| %>
+    <tr>
+      <td><%= proposal.name %></td>
+      <td><%= proposal.link %></td>
+      <td><%= proposal.votes %></td>
+      <td><%= link_to 'Show', proposal_path(proposal) %></td>
+    </tr>
+  <% end %>
+</table>

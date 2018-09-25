@@ -1,0 +1,21 @@
+<div class="nav-left">
+  <%= link_to '< home', '/' %>
+  <%= link_to '< votes', votes_path %>
+</div>
+
+<p>
+  <h1>
+    <%= @proposal.name %>
+  </h1>
+</p>
+
+<p class="v4p-central">
+  <strong class="proposallabel">Link:</strong>
+  <a href="<%= @proposal.link %>"><%= @proposal.link %></a>
+</p>
+
+<p class="v4p-central">
+  <strong class="proposallabel">bio:</strong>
+  <%= @proposal.bio %>
+</p>
+

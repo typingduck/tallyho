@@ -1,0 +1,34 @@
+<%= link_to '< home', '/', class: 'nav-left' %>
+
+<h1>vote</h1>
+
+<% if @votes.length < 3 %>
+  <%= form_with url: votes_path, :id => "v4p-proposal-form", class: 'v4p-form v4p-central', local: true do |form| %>
+    <input id="v4p-proposal-search-selected" type="hidden" name="cid">
+    <label for="v4p-proposal-search">Search for a proposal: </label>
+    <input id="v4p-proposal-search" type="text" size="34" autofocus>
+  <% end %>
+
+  <p class="v4p-central"> Can't find who you want? Add a
+    <%= link_to 'new proposal', new_proposal_path %>.
+  </p>
+<% end %>
+
+<% if @votes.length > 0 %>
+  <h2>your votes</h2>
+  <table>
+    <tr> <th> name </th> <th> votes (%) </th> <th> </th> </tr>
+    <% @votes.each do |vote| %>
+      <tr>
+        <td><%= link_to vote.proposal.name, proposal_path(vote.proposal) %></td>
+        <td><%= number_with_precision(vote.proposal.percent, :precision => 0) %></td>
+        <td>
+          <%= form_tag(vote_path(vote), method: "delete") do %>
+            <input type="submit" value="remove vote">
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <p class="v4p-central"> max of 3 votes allowed </p>
+<% end %>

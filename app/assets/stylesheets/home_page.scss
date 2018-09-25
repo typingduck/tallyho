@@ -1,0 +1,9 @@
+$color-shadow: #EBEBE9;
+
+.v4p-tshadow {
+  text-shadow:
+    1px  1px 1px $color-shadow,
+   -1px -1px 8px $color-shadow,
+    1px  1px 8px $color-shadow,
+   -1px -1px 1px $color-shadow;
+}

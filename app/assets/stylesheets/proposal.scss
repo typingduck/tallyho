@@ -1,0 +1,13 @@
+.proposallabel {
+  display: inline-block;
+  width: 5em;
+  text-align: right;
+}
+
+@media only screen and (max-width: 600px) {
+  .proposallabel {
+    display: block;
+    margin: auto;
+    text-align: center;
+  }
+}

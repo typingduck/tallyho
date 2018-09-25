@@ -1,0 +1,34 @@
+<%= link_to '< home', '/', class: 'nav-left' %>
+
+<h1> Login </h1>
+
+<p class="v4p-center">
+  Login with an existing account to prove identity.
+<p>
+
+<div style="text-align: center">
+<div class="v4p-login-b" style="background-color: #50ABF1">
+  <a href="/auth/twitter">
+    <i class="fab fa-twitter"></i> sign in with twitter
+  </a>
+</div>
+
+<br>
+<div class="v4p-login-b" style="background-color: #DF4A32">
+  <a href="/auth/google_oauth2">
+    <i class="fab fa-google"></i> sign in with google
+  </a>
+</div>
+
+<br>
+<div class="v4p-login-b" style="background-color: #3B5998">
+  <a href="/auth/facebook">
+    <i class="fab fa-facebook-f"></i> sign in with facebook
+  </a>
+</div>
+</div>
+
+<p class="v4p-center">
+  <%= link_to 'contact', 'contact' %>
+  <%= link_to 'policy', 'policy' %>
+</p>

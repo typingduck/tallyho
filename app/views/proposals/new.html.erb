@@ -1,0 +1,36 @@
+<%= link_to '< my votes', votes_path, class: 'nav-left' %>
+
+<h1>New Proposal</h1>
+
+<%= form_with scope: :proposal, url: proposals_path, class: 'v4p-form', local: true do |form| %>
+
+  <%= form.label :name, :class => 'proposallabel' %>
+  <%= form.text_field :name, :size => 34 %>
+  <% @proposal.errors.messages[:name].each do |msg| %>
+    <span class="error_msg"><%= msg %></msg></span>
+  <% end %>
+  <br>
+
+  <%= form.label :link, 'Link', :class => 'proposallabel' %>
+  <%= form.text_field :link, :size => 34 %>
+  <% unless @proposal.errors.messages[:link].present? %>
+    <span> (to twitter or wikipedia page) </span>
+  <% end %>
+  <% @proposal.errors.messages[:link].each do |msg| %>
+    <span class="error_msg"><%= msg %></msg></span>
+  <% end %>
+  <br>
+  <%= form.label :bio, :class => 'proposallabel' %>
+  <%= form.text_area :bio, :rows => 5 %>
+  <% unless @proposal.errors.messages[:bio].present? %>
+    <span> (optional) </span>
+  <% end %>
+  <% @proposal.errors.messages[:bio].each do |msg| %>
+    <span class="error_msg"><%= msg %></msg></span>
+  <% end %>
+  <br>
+
+  <p class="v4p-central">
+    <%= form.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,29 @@
+<h1> <%= t(:vote_title) %> </h1>
+
+<p class="v4p-center">
+  <%= t(:vote_description) %>
+</p>
+
+<p class="v4p-center">
+  <%= link_to 'Vote!', { controller: 'votes' }, :class => 'button' %>
+</p>
+
+<h2> current leaderboard </h2>
+<table class="v4p-tshadow">
+  <tr> <th> name </th> <th> votes (%) </th> </tr>
+  <% @top_proposals.each do |proposal| %>
+    <tr>
+      <td><%= link_to proposal.name, proposal_path(proposal) %></td>
+      <td><%= number_with_precision(proposal.percent, :precision => 0) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p>
+  <%= t(:homepage_subsection) %>
+</p>
+
+<p class="v4p-center">
+  <%= link_to 'contact', 'contact' %>
+  <%= link_to 'policy', 'policy' %>
+</p>

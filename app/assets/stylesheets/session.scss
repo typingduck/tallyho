@@ -1,0 +1,19 @@
+
+.v4p-login-b {
+  border-radius: 6px;
+  border: 1px solid #338618;
+  display: inline-block;
+  margin: 15px auto;
+  padding: 10px 15px;
+}
+
+.v4p-login-b i {
+  margin-right: 10px;
+}
+
+.v4p-login-b a {
+  color: white;
+  &:hover {
+    border-bottom: none;
+  }
+}
